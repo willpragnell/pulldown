@@ -152,6 +152,12 @@ var pulldown = {
       if(!isTest) console.log("-> " + green + "SUCCESS: " + fileName + " has been unzipped to /" + output, reset);
       (cb && typeof cb == "function" && cb());
     });
+  },
+  pull: function(userArgs) {
+    pulldown.getSettingsFile(function() {
+      pulldown.readPackagesFromSettings();
+      pulldown.processUserArgs(userArgs);
+    });
   }
 };
 

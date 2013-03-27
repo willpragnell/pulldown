@@ -28,7 +28,4 @@ if(userArgs[0] == "--help" || userArgs[0] == "-h") {
   process.exit(1);
 }
 
-pulldown.getSettingsFile(function() {
-  pulldown.readPackagesFromSettings();
-  pulldown.processUserArgs(userArgs);
-});
+pulldown.pull(userArgs);
